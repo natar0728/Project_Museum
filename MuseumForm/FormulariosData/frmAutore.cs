@@ -102,13 +102,24 @@ namespace MuseumForm.FormulariosData
 
 
 
+       
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            AddAutor();
 
-            btnEditar.Enabled = false;
-            dgvAutores.Visible = true;
+            if (txtName.Text == "" || txtEmail.Text == "" || txtLastName.Text == "")
+            {
+               MessageBox.Show("Por favor, no deje campos vacíos");
+                return;
+            }
+                AddAutor();
+
+                btnEditar.Enabled = false;
+                dgvAutores.Visible = true;
+            
+
+
+            
         }
 
         private async void AddAutor()
@@ -146,6 +157,8 @@ namespace MuseumForm.FormulariosData
 
         private void btnMostAutors_Click(object sender, EventArgs e)
         {
+
+         
             dgvAutores.Visible = true;
             ShowAutors();
             btnEditar.Enabled = false;

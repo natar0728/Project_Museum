@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExposiciones));
             tabControl1 = new TabControl();
             tpAddObr_NewAut = new TabPage();
+            pictureBox1 = new PictureBox();
             dtpFechaExpo = new DateTimePicker();
             lblFecha = new Label();
             txtPlace = new TextBox();
@@ -39,20 +40,19 @@
             label1 = new Label();
             btnRegistWithAut = new Button();
             tabPage1 = new TabPage();
+            pictureBox2 = new PictureBox();
             lblIdSelected = new Label();
             label2 = new Label();
             btnDeleteExpo = new Button();
             btnEditExpo = new Button();
             btnSeeExpos = new Button();
             dgvExpos = new DataGridView();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             tabControl1.SuspendLayout();
             tpAddObr_NewAut.SuspendLayout();
-            tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvExpos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvExpos).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -82,6 +82,16 @@
             tpAddObr_NewAut.Size = new Size(890, 468);
             tpAddObr_NewAut.TabIndex = 0;
             tpAddObr_NewAut.Text = "Añadir con Autor existente";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(349, 6);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(128, 119);
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
             // 
             // dtpFechaExpo
             // 
@@ -124,6 +134,9 @@
             cmbAutors.Name = "cmbAutors";
             cmbAutors.Size = new Size(187, 23);
             cmbAutors.TabIndex = 8;
+            cmbAutors.KeyDown += cmbAutors_KeyDown;
+            cmbAutors.KeyPress += cmbAutors_KeyPress;
+            cmbAutors.KeyUp += cmbAutors_KeyUp;
             // 
             // label1
             // 
@@ -160,6 +173,16 @@
             tabPage1.Size = new Size(890, 468);
             tabPage1.TabIndex = 2;
             tabPage1.Text = "Registro";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(345, 6);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(128, 119);
+            pictureBox2.TabIndex = 14;
+            pictureBox2.TabStop = false;
             // 
             // lblIdSelected
             // 
@@ -231,26 +254,6 @@
             dgvExpos.TabIndex = 0;
             dgvExpos.CellClick += dgvExpos_CellClick;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(349, 6);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(128, 119);
-            pictureBox1.TabIndex = 13;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(345, 6);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(128, 119);
-            pictureBox2.TabIndex = 14;
-            pictureBox2.TabStop = false;
-            // 
             // frmExposiciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -264,11 +267,11 @@
             tabControl1.ResumeLayout(false);
             tpAddObr_NewAut.ResumeLayout(false);
             tpAddObr_NewAut.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvExpos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvExpos).EndInit();
             ResumeLayout(false);
         }
 

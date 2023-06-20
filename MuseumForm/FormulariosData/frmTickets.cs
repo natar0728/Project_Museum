@@ -260,6 +260,11 @@ namespace MuseumForm.FormulariosData
 
         private void btnGenTicket_Click(object sender, EventArgs e)
         {
+            if (lblIdSelcted.Text == "--")
+            {
+                MessageBox.Show("Por favor, Seleccione a un cliente.");
+                return;
+            }
             AddTicketWExistClient();
         }
 
@@ -288,10 +293,17 @@ namespace MuseumForm.FormulariosData
             //ShowAutors();
             //Clear();
             Console.WriteLine();
+            lblIdSelcted.Text = "--";
         }
 
         private void btnGTckAndNClient_Click(object sender, EventArgs e)
         {
+
+            if(txtNombreNewClient.Text == "" || txtPhoneNewClient.Text =="")
+            {
+                MessageBox.Show("Por favor, no deje campos vacíos");
+                return;
+            }
             AddTicketWNewClient();
         }
 

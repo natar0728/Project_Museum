@@ -24,8 +24,20 @@ namespace MuseumForm.FormulariosData
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)//Boton Registrar
+        private void button1_Click(object sender, EventArgs e)//Boton RegistrarNew
         {
+
+            if (txtNameAut.Text == "" || txtEmailAut.Text == "" || txtLastNameAut.Text == "")
+            {
+                MessageBox.Show("Por favor, no deje campos vacíos");
+                return;
+            }
+
+            if (txtTittleNAut.Text == "" || txtDescNAut.Text == "" || cmbTypesNewAut.Text == "")
+            {
+                MessageBox.Show("Por favor, no deje campos vacíos");
+                return;
+            }
 
             var LastAutor = listaAutores.LastOrDefault();
             int idNewAut = LastAutor.Id;
@@ -85,7 +97,7 @@ namespace MuseumForm.FormulariosData
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-         
+
         }
 
 
@@ -331,6 +343,13 @@ namespace MuseumForm.FormulariosData
 
         private void btnRegistWithAut_Click(object sender, EventArgs e)
         {
+            if (txtDescWAu.Text == "" || txtTittleWAut.Text == "" || cmbAutors.Text == "" || cmbTypesWithAut.Text == "")
+            {
+                MessageBox.Show("Por favor, no deje campos vacíos");
+                return;
+            }
+
+
             AddObraWExistAu();
         }
 
@@ -404,6 +423,52 @@ namespace MuseumForm.FormulariosData
 
             btnEdit.Enabled = true;
 
+        }
+
+        private void cmbTypesWithAut_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cmbTypesWithAut.Text = String.Empty;
+        }
+
+        private void cmbAutors_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cmbAutors.Text = String.Empty;
+        }
+
+        private void cmbTypesNewAut_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cmbTypesNewAut.Text = String.Empty;
+
+        }
+
+        private void cmbTypesNewAut_KeyDown(object sender, KeyEventArgs e)
+        {
+            cmbTypesNewAut.Text = String.Empty;
+        }
+
+        private void cmbTypesNewAut_KeyUp(object sender, KeyEventArgs e)
+        {
+            cmbTypesNewAut.Text = String.Empty;
+        }
+
+        private void cmbTypesWithAut_KeyUp(object sender, KeyEventArgs e)
+        {
+            cmbTypesWithAut.Text = String.Empty;
+        }
+
+        private void cmbTypesWithAut_KeyDown(object sender, KeyEventArgs e)
+        {
+            cmbTypesWithAut.Text = String.Empty;
+        }
+
+        private void cmbAutors_KeyDown(object sender, KeyEventArgs e)
+        {
+            cmbAutors.Text = String.Empty;
+        }
+
+        private void cmbAutors_KeyUp(object sender, KeyEventArgs e)
+        {
+            cmbAutors.Text = String.Empty;
         }
     }
 }

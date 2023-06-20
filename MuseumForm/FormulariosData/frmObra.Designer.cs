@@ -123,6 +123,9 @@
             cmbAutors.Size = new Size(172, 23);
             cmbAutors.TabIndex = 8;
             cmbAutors.SelectedIndexChanged += cmbAutors_SelectedIndexChanged;
+            cmbAutors.KeyDown += cmbAutors_KeyDown;
+            cmbAutors.KeyPress += cmbAutors_KeyPress;
+            cmbAutors.KeyUp += cmbAutors_KeyUp;
             // 
             // label1
             // 
@@ -141,6 +144,9 @@
             cmbTypesWithAut.Name = "cmbTypesWithAut";
             cmbTypesWithAut.Size = new Size(121, 23);
             cmbTypesWithAut.TabIndex = 6;
+            cmbTypesWithAut.KeyDown += cmbTypesWithAut_KeyDown;
+            cmbTypesWithAut.KeyPress += cmbTypesWithAut_KeyPress;
+            cmbTypesWithAut.KeyUp += cmbTypesWithAut_KeyUp;
             // 
             // lblType
             // 
@@ -284,6 +290,9 @@
             cmbTypesNewAut.Name = "cmbTypesNewAut";
             cmbTypesNewAut.Size = new Size(121, 23);
             cmbTypesNewAut.TabIndex = 15;
+            cmbTypesNewAut.KeyDown += cmbTypesNewAut_KeyDown;
+            cmbTypesNewAut.KeyPress += cmbTypesNewAut_KeyPress;
+            cmbTypesNewAut.KeyUp += cmbTypesNewAut_KeyUp;
             // 
             // label3
             // 

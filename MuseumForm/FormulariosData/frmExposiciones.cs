@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MuseumForm.FormulariosData
 {
@@ -60,6 +61,12 @@ namespace MuseumForm.FormulariosData
 
         private void btnRegistWithAut_Click(object sender, EventArgs e)
         {
+
+            if (txtPlace.Text == "" || cmbAutors.Text == "")
+            {
+                MessageBox.Show("Por favor, no deje campos vacíos");
+                return;
+            }
             var LastAutor = listaAutores.LastOrDefault();
             int idNewAut = LastAutor.Id + 1;
 
@@ -317,6 +324,22 @@ namespace MuseumForm.FormulariosData
 
             btnEditExpo.Enabled = true;
 
+        }
+
+        private void cmbAutors_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if()
+            cmbAutors.Text = "";
+        }
+
+        private void cmbAutors_KeyUp(object sender, KeyEventArgs e)
+        {
+            cmbAutors.Text = "";
+        }
+
+        private void cmbAutors_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cmbAutors.Text = "";
         }
     }
 }
